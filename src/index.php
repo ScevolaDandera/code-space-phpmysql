@@ -1,26 +1,37 @@
-<h1> Hello from devcontainer-example!</h1>
 
-<p>It's not super exciting, but this is being served from the webserver 
-    container in our devcontainer.</p>
-
-<h2>Guestbook</h2>
-
-<table cellspacing="8">
-    <tr>
-        <th>Name</th>
-        <th>Visited</th>
-        <th>Note</th>
-    <tr>
+<!doctype html>
 
 <?php
-$connection = mysqli_connect($_ENV["DATABASE_HOST"], $_ENV["DATABASE_USER"], $_ENV["DATABASE_PASSWORD"], $_ENV["DATABASE_DB"]);
-$result = mysqli_query($connection, "SELECT * FROM guestbook");
-while($row = mysqli_fetch_array($result)) {
-    print "<tr>";
-    print "<td>" . $row["visitor_name"] . "</td>";
-    print "<td>" . $row["created_at"] . "</td>";
-    print "<td>" . $row["note"] . "</td>";
-    print "</tr>";
-}
+require ("functions.php")
+	
 ?>
-</table>
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>Key Dispact</title>
+</head>
+
+<body>
+	<form action="Keydispatch.php" method="get">
+		
+		StaffId: <input type="text" name ="staffid">
+		<br>
+		StaffName: <input type="text" name="staffname" >
+		<br>
+		PhoneNumber: <input type="text" name= "phonenumber">
+		<br>
+		<input type="submit">
+		
+	</form>
+	
+	<?php
+	
+		$usersData = getUsersData (getId());
+	?>
+	
+
+
+	
+</body>
+</html>

@@ -4,3 +4,9 @@ CREATE TABLE guestbook (
     note TEXT NULL,
     created_at DATETIME DEFAULT now()
 );
+
+CREATE TABLE User (
+    staffId INTEGER NOT NULL PRIMARY KEY,
+    staffName VARCHAR(255) NOT NULL,
+    phoneNumber INTEGER NOT NULL
+);
