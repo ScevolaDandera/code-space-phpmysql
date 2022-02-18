@@ -6,7 +6,7 @@ CREATE TABLE guestbook (
 );
 
 CREATE TABLE User (
-    staffId INTEGER NOT NULL PRIMARY KEY,
+    staffId INT NOT NULL PRIMARY KEY,
     staffName VARCHAR(255) NOT NULL,
-    phoneNumber INTEGER NOT NULL
+    phoneNumber INT NOT NULL
 );
